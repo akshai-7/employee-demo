@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 ">
 
-                <form action="/update/{id}" method="POST" class="mt-5" enctype="multipart/form-data">
+                <form action="/update/{id}" method="POST" class="mt-3" enctype="multipart/form-data">
                     @csrf
                     @foreach ($edit as $edits)
                         <div class="card">
@@ -145,31 +145,24 @@
                                             @enderror
                                         </div>
                                     </div>
-
                                     <div class="row mb-3">
                                         <label for="image"
-                                            class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
-
+                                            class="col-md-4 col-form-label text-md-end">{{ __(' Current Image:') }}</label>
                                         <div class="col-md-6">
-                                            <input id="image" type="file"
-                                                class="form-control @error('image') is-invalid @enderror" name="image[]"
-                                                value="{{ $edits->image }}" autocomplete="image" multiple>
-
-                                            <input id="image" type="text"
-                                                class="form-control @error('image') is-invalid @enderror" name="image[]"
-                                                value="{{ $edits->image }}" autocomplete="image" multiple>
-                                            <!-- Hidden field to store the current image name -->
-
-                                            @if ($errors->has('image'))
-                                                <span class="help-block text-danger">
-                                                    <strong>{{ $errors->first('image') }}</strong>
-                                                </span>
-                                            @endif
+                                            <img src="{{ url('images/' . explode(',', $edits->image)[0]) }}"
+                                                class="rounded-0 border border-secondary" width="70px">
                                         </div>
                                     </div>
-
-
-
+                                    <div class="row mb-3">
+                                        <label for="image"
+                                            class="col-md-4 col-form-label text-md-end">{{ __(' New Image:') }}</label>
+                                        <div class="col-md-6">
+                                            <input id="image" type="file" class="form-control" name="image[]"
+                                                value="{{ $edits->image }}" autocomplete="image" multiple>
+                                            <input id="image" type="hidden" class="form-control" name="image[]"
+                                                value="{{ $edits->image }}" autocomplete="image" multiple>
+                                        </div>
+                                    </div>
                                     <div class="row mb-0">
                                         <div class="col-md-6 offset-md-4">
                                             <button type="submit" class="btn btn-primary">

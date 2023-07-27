@@ -40,21 +40,27 @@ class UserController extends Controller
         $update->address = $request['address'];
         $update->mobile = $request['mobile'];
         $update->description = $request['description'];
-        $data = $request->all();
-        $img = array();
-        for ($i = 0; $i < count($data['image']); $i++) {
-            $imageName = time() . '.' . $data['image'][$i]->getClientOriginalName();
-            $data['image'][$i]->move(public_path('images'), $imageName);
-            array_push($img, $imageName);
+
+        if ($request->file('image') != null) {
+            $data = $request->all();
+            $img = array();
+            for ($i = 0; $i < count($data['image']); $i++) {
+                $imageName = time() . '.' . $data['image'][$i]->getClientOriginalName();
+                $data['image'][$i]->move(public_path('images'), $imageName);
+                array_push($img, $imageName);
+            }
+            $data1 = array(
+                'image' =>  implode(",", $img),
+            );
+            $update->image = $data1['image'];
+        } elseif ($request->file('image') == null) {
+            $data1 = array(
+                'image' =>  implode(",", $request['image']),
+            );
+            $update->image = $data1['image'];
         }
-        $data1 = array(
-            'image' =>  implode(",", $img),
-        );
-        $update->image = $data1['image'];
         $update->save();
-
         session()->flash('message', ' Updated Successfully');
-
         return redirect('/user');
     }
 

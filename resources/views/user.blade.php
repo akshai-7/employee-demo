@@ -92,7 +92,6 @@
                 @endif
             </div>
             <h3 id="title1"> Employee detailes</h3>
-            {{-- <a href="/register"><input type="submit" value="Add Employee" id="add"></a> --}}
             <form action="/usersearch" method="GET" autocomplete="off">
                 <div id="filterDiv1">
                     <div class="col-md-9">
@@ -112,9 +111,9 @@
                     </div>
                 </div>
             </form>
-            <table class="table table-bordered table-striped mt-1" style="border: 1px solid lightgrey;width:1200px;"
+            <table class="table table-bordered table-striped mt-1" style="border:1px solid lightgrey;width:1230px;"
                 id="mytable">
-                <thead style="font-size: 17px;font-weight:600;" id="thead">
+                <thead style="font-size:14px;font-weight:600;" id="thead">
                     <th style="text-align:center;" id="title">S.no</th>
                     <th style="text-align:center;" id="title">Employee Id</th>
                     <th style="text-align:center;" id="title">Employee Name</th>
@@ -144,12 +143,10 @@
                         </td>
                         <td style="text-align:center;" class="table_data">{{ $user->description }}</td>
                         <td style="text-align:center;" class="table_data">
-                            @if ($user->image != null)
-                                <a>
-                                    <img src="{{ url('images/' . explode(',', $user->image)[0]) }}"
-                                        class="rounded-0 border border-secondary" width="50px" height="50px">
-                                </a>
-                            @endif
+                            <a>
+                                <img src="{{ url('images/' . explode(',', $user->image)[0]) }}"
+                                    class="rounded-0 border border-secondary" width="70px">
+                            </a>
                         </td>
                         <td style="text-align:center;" class="table_data">
                             <a href="/edituser/{{ $user->id }}" class="btn btn-success btn-sm mt-1"><i

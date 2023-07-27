@@ -42,15 +42,16 @@
     }
 
     #div-1 {
-        width: 15%;
+        width: 12%;
         height: 100vh;
         background: #f7a8bb;
 
     }
 
     #div-2 {
-        width: 85%;
-        overflow: scroll;
+        width: 88%;
+        overflow-y: scroll;
+        overflow-x: hidden;
         background: #f7e5ea;
     }
 
