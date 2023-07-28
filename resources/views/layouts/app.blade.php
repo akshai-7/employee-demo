@@ -125,7 +125,6 @@
                         </form>
                     </a>
                 </li>
-
             </div>
             <div id="div-2">
                 @yield('content')
@@ -134,8 +133,6 @@
         <footer class="footer">
             <p>Copyright@2023 by Refsnes Data. All Rights Reserved</p>
         </footer>
-
-
     </div>
 </body>
 

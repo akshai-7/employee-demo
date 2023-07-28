@@ -1,20 +1,5 @@
 @extends('layouts.login')
 
-<style>
-    .btn1 {
-        color: white;
-        text-decoration-line: none;
-
-    }
-
-    #message {
-        position: fixed;
-        top: 70px;
-        right: 10px;
-        animation-duration: 1s;
-        z-index: 1;
-    }
-</style>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -171,7 +156,7 @@
                                     <div class="col-md-6">
                                         <input id="image" type="file"
                                             class="form-control @error('image') is-invalid @enderror" name="image[]"
-                                            value="{{ old('image') }}" autocomplete="image" multiple>
+                                            value="{{ old('image[]') }}" autocomplete="image" multiple>
 
                                         @if ($errors->has('image'))
                                             <span class="help-block text-danger">
@@ -220,9 +205,6 @@
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Register') }}
                                         </button>
-                                        {{-- <button type="submit" class="btn btn-secondary ">
-                                        <a href="/" class="btn1"> {{ __('Back') }}</a>
-                                    </button> --}}
                                     </div>
                                 </div>
                             </form>

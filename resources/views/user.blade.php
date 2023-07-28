@@ -36,7 +36,8 @@
                         <br />
                         <button type="submit" class="btn btn-primary btn-sm mt-1"><i
                                 class="fa-solid fa-magnifying-glass"></i></i></button>
-                        <a href="/user" class="btn btn-secondary btn-sm mt-1"><i class="fa-solid fa fa-refresh"></i></a>
+                        <a href="/user" class="btn btn-secondary btn-sm mt-1" id="page"><i
+                                class="fa-solid fa fa-refresh"></i></a>
                     </div>
                 </div>
             </form>
