@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -31,6 +32,16 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
+
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'fathername' => 'required',
+            'address' => 'required',
+            'mobile' => 'required|numeric|digits:10',
+            'description' => 'required',
+            'email' => 'required|email:rfc,dns',
+        ]);
 
         $update = User::where('id', $request->id)->first();
         $update->firstname = $request['firstname'];

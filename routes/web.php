@@ -20,7 +20,6 @@ Route::get('/', function () {
 Route::get('/register', [App\Http\Controllers\UserController::class, 'store'])->name('register');
 Route::view('/register', [App\Http\Controllers\UserController::class, 'register']);
 
-
 Auth::routes();
 
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
@@ -29,6 +28,8 @@ Route::get('/edituser/{id}', [App\Http\Controllers\UserController::class, 'editu
 Route::post('/update/{id}', [App\Http\Controllers\UserController::class, 'update']);
 Route::get('/remove/{id}', [App\Http\Controllers\UserController::class, 'remove']);
 Route::get('/usersearch', [App\Http\Controllers\UserController::class, 'usersearch']);
+
+
 
 
 

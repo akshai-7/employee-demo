@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+body {
+    font-family: "Mulish", sans-serif;
+    background-color: #e8dcdf;
+}
+#filterDiv1 {
+    width: 30%;
+    margin-left: 780px;
+    padding: 10px 5px;
+    display: flex;
+    align-content: center;
+    justify-content: start;
+}
+
+#title {
+    color: white;
+    background-color: #f06487;
+}
+
+#title1 {
+    color: black;
+    margin-left: -70px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#dataNotFound {
+    margin-left: 100px;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: black;
+    background-color: #dedbdbab;
+}
+
+#active {
+    margin-left: 950px;
+    color: #bf0e3a;
+    margin-top: 50px;
+}
+
+#add {
+    background: #e94870;
+    border-radius: 5px;
+    border: 1px solid rgb(148, 35, 35);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    top: -20px;
+    height: 30px;
+    position: relative;
+    width: 120px;
+    margin-left: 950px;
+}
+
+#message {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    animation-duration: 1s;
+    z-index: 1;
+}
+
+#mytable {
+    margin-left: -80px;
+}
+#app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar {
+    height: 10%;
+}
+
+.content {
+    height: 85%;
+    display: flex;
+    overflow: hidden;
+}
+
+#div-1 {
+    width: 12%;
+    height: 100vh;
+    background: #f7a8bb;
+}
+
+#div-2 {
+    width: 88%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #f7e5ea;
+}
+
+.footer {
+    background: #f7a8bb;
+    height: 5%;
+    text-align: center;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav_list {
+    width: 96%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 14px;
+    font-family: inherit;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav_list:hover {
+    width: 96%;
+    border-radius: 10px;
+    box-shadow: 2px 5px 3px 0px #9d9a9a;
+    background: #e94870;
+    color: white;
+}
+
+.icon {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex: 1;
+}
+
+.active .nav_list {
+    width: 96%;
+    color: white;
+    border-radius: 10px;
+    background: #e94870;
+}
+
+.side_name {
+    flex: 2;
+    display: block;
+}
+
+img {
+    width: 100px;
+}
+.img {
+    width: 80px;
+}
+.btn1 {
+    color: white;
+    text-decoration-line: none;
+}

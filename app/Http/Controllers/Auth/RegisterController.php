@@ -60,14 +60,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    // protected function create(array $data)
-    // {
-    //     return User::create([
-    //         'name' => $data['name'],
-    //         'email' => $data['email'],
-    //         'password' => Hash::make($data['password']),
-    //     ]);
-    // }
+
 
     public function store()
     {
@@ -76,7 +69,6 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        // dd($request);
         $request->validate([
             'firstname' => 'required',
             'lastname' => 'required',

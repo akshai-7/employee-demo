@@ -1,11 +1,4 @@
 @extends('layouts.login')
-
-<style>
-    .btn1 {
-        color: white;
-        text-decoration-line: none;
-    }
-</style>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -18,102 +20,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
 </head>
-<style>
-    #app {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .navbar {
-        height: 10%;
-    }
-
-    .content {
-        height: 85%;
-        display: flex;
-        overflow: hidden;
-    }
-
-    #div-1 {
-        width: 12%;
-        height: 100vh;
-        background: #f7a8bb;
-
-    }
-
-    #div-2 {
-        width: 88%;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        background: #f7e5ea;
-    }
-
-    .footer {
-        background: #f7a8bb;
-        height: 5%;
-        text-align: center;
-    }
-
-    li {
-        text-decoration: none;
-        list-style: none;
-    }
-
-    .nav_list {
-        width: 96%;
-        height: 7vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 5px;
-        font-size: 14px;
-        font-family: inherit;
-        color: black;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-    .nav_list:hover {
-        width: 96%;
-        border-radius: 10px;
-        box-shadow: 2px 5px 3px 0px #9d9a9a;
-        background: #e94870;
-        color: white;
-    }
-
-    .icon {
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex: 1;
-
-    }
-
-    .active .nav_list {
-        width: 96%;
-        color: white;
-        border-radius: 10px;
-        background: #e94870;
-    }
-
-    .side_name {
-        flex: 2;
-        display: block;
-    }
-
-    img {
-        /* height: 100px; */
-        width: 100px;
-    }
-</style>
 
 <body>
     <div id="app">
@@ -152,18 +65,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a> --}}
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    {{-- <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a> --}}
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -173,6 +75,27 @@
                     </ul>
                 </div>
             </div>
+            <div class="mt-4" style="margin-left:100px">
+                <div class="message" id="message">
+                    @if (session()->has('message'))
+                        <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 2000)" x-show="show"
+                            style="width: 300px;height:20px">
+                            <div div class="alert alert-success">
+                                <i class="fa-regular fa-circle-check"></i> {{ session('message') }}
+                            </div>
+                        </div>
+                    @endif
+                </div>
+                <div class="message1" id="message">
+                    @if (session()->has('message1'))
+                        <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 2000)" x-show="show"
+                            style="width: 300px;height:20px;">
+                            <div class="alert alert-danger">
+                                <i class="fa-regular fa-circle-x"></i>{{ session('message1') }}
+                            </div>
+                        </div>
+                    @endif
+                </div>
         </nav>
         <div class="content">
             <div id="div-1">

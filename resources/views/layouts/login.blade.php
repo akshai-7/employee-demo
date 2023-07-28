@@ -8,6 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
     <title>{{ config('Employee', 'Employee') }}</title>
 
     <!-- Scripts -->
@@ -18,40 +22,19 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
 
 </head>
-<style>
-    li {
-        text-decoration: none;
-        list-style: none;
-    }
 
-    img {
-        width: 100px;
-    }
-
-    #message {
-        position: fixed;
-        top: 70px;
-        right: 10px;
-        animation-duration: 1s;
-        z-index: 1;
-    }
-</style>
-
-<body style="background-color: #e8dcdf">
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color: #f492ab">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('AD Group', 'AD Group') }} --}}
-                    <img src="images/m-d-foundation.png" alt="">
-
+                    <img src="images/m-d-foundation.png" alt="" class="img">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -84,10 +67,7 @@
             <div class="mt-5">
                 @yield('content')
             </div>
-
         </div>
-
-
 </body>
 
 </html>
